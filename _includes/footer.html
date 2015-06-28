@@ -42,6 +42,13 @@
             </a>
           </li>
           {% endif %}
+
+          {% if site.linkedin_username %}
+          <li>
+            <i class="fa fa-linkedin-square"></i>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">{{ site.linkedin_username }}</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
 

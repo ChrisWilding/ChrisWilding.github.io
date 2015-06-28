@@ -1,12 +1,13 @@
 # Site settings
-title: Enterprise Ruby on Rails application developer
+title: Chris Wilding
 email: hello@chriswilding.co.uk
 description: >
   This is the personal website of Chris Wilding
 baseurl: ''
 url: 'http://chriswilding.co.uk'
-twitter_username: ChrisWildingUK
 github_username:  ChrisWilding
+linkedin_username: ChrisWildingUK
+twitter_username: ChrisWildingUK
 
 # Build settings
 markdown: kramdown
