@@ -5,9 +5,11 @@ description: >
   This is the personal website of Chris Wilding
 baseurl: ''
 url: 'http://chriswilding.co.uk'
-github_username:  ChrisWilding
-linkedin_username: ChrisWildingUK
-twitter_username: ChrisWildingUK
+
+usernames:
+  github:  ChrisWilding
+  linkedin: ChrisWildingUK
+  twitter: ChrisWildingUK
 
 # Build settings
 markdown: kramdown

@@ -14,28 +14,28 @@
 
       <div class="footer-col  footer-col-2">
         <ul class="social-media-list">
-          {% if site.github_username %}
+          {% if site.usernames.github %}
           <li>
             <i class="fa fa-github-square"></i>
-            <a href="https://github.com/{{ site.github_username }}">
-              <span class="username">{{ site.github_username }}</span>
+            <a href="https://github.com/{{ site.usernames.github }}">
+              <span class="username">{{ site.usernames.github }}</span>
             </a>
           </li>
           {% endif %}
 
-          {% if site.twitter_username %}
+          {% if site.usernames.twitter %}
           <li>
             <i class="fa fa-twitter-square"></i>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <span class="username">{{ site.twitter_username }}</span>
+            <a href="https://twitter.com/{{ site.usernames.twitter }}">
+              <span class="username">{{ site.usernames.twitter }}</span>
             </a>
           </li>
           {% endif %}
 
-          {% if site.linkedin_username %}
+          {% if site.usernames.linkedin %}
           <li>
             <i class="fa fa-linkedin-square"></i>
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">{{ site.linkedin_username }}</a>
+            <a href="https://www.linkedin.com/in/{{ site.usernames.linkedin }}">{{ site.usernames.linkedin }}</a>
           </li>
           {% endif %}
         </ul>
