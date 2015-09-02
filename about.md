@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hi, I'm Chris Wilding. I'm a cycling, music loving, tea obsessed software developer living and working in Manchester, UK. I currently work for [Sage](http://www.sage.co.uk/) in an agile scrum environment as a Ruby on Rails web developer.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Some of the languages, software and tools I work with regularly are:  Angular, Capybara, CSS, Cucumber, Git, GitHub, JavaScript, Linux, Mac OS X, MySQL, RSpec, Ruby, RubyMine, Ruby on Rails, SCSS, SQL, Ubuntu, Vagrant, Vim
