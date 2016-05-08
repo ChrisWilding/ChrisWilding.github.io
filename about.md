@@ -4,10 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Chris Wilding. I'm music loving, tea obsessed software developer living
-and working in Manchester, UK.
+Hi, I'm Chris Wilding. I'm a music loving, tea obsessed software developer
+working in Leeds, UK.
 
-Some of the languages, software and tools I work with regularly are:
-AngularJS, Capybara, CSS, Cucumber, Git, GitHub, JavaScript, Jira, Linux, Mac
-OS X, MySQL, RSpec, Ruby, RubyMine, Ruby on Rails, SCSS, SQL, Ubuntu, Vagrant,
-Vim
+Some of the languages, software and tools I work with regularly are: CSS, Git,
+GitHub, GraphQL, JavaScript, Mac OX X, React, RSpec, Sinatra, SCSS and Vim
+
+In the past I've also worked with: AngularJS, Capybara, Cucumber, C#, Jira,
+Linux, Mac OS X, MySQL, Python, SQL, Ubuntu and Vagrant
