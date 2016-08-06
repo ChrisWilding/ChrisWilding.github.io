@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/chriswilding
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://chriswilding.co.uk
+  * I am chriswilding (https://keybase.io/chriswilding) on keybase.
+  * I have a public key ASCyrfeg4RWo2T2zj5GEF4xLJf7vS12IuJgQiJQK-2IBqwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120b2adf7a0e115a8d93db38f9184178c4b25feef4b5d88b8981088940afb6201ab0a",
+            "host": "keybase.io",
+            "kid": "0120b2adf7a0e115a8d93db38f9184178c4b25feef4b5d88b8981088940afb6201ab0a",
+            "uid": "3fbe7e315a424ea6dc0bc85978160019",
+            "username": "chriswilding"
+        },
+        "service": {
+            "hostname": "chriswilding.co.uk",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.16"
+    },
+    "ctime": 1470517921,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1470517848,
+        "hash": "99ef78ccf98c5743a5a5d20050cb107dabdf55d3dd6bcc360ff7b73342ca24ccc5f8fb94952072a32ae5b159326a7ee611734bb7120f685b6d0547911af949af",
+        "seqno": 563046
+    },
+    "prev": "581dd085adafd45f9a930f201cc81b06255c258bb227ed91ce7f4d0dfe3c5e01",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgsq33oOEVqNk9s4+RhBeMSyX+70tdiLiYEIiUCvtiAasKp3BheWxvYWTFAv17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYjJhZGY3YTBlMTE1YThkOTNkYjM4ZjkxODQxNzhjNGIyNWZlZWY0YjVkODhiODk4MTA4ODk0MGFmYjYyMDFhYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYjJhZGY3YTBlMTE1YThkOTNkYjM4ZjkxODQxNzhjNGIyNWZlZWY0YjVkODhiODk4MTA4ODk0MGFmYjYyMDFhYjBhIiwidWlkIjoiM2ZiZTdlMzE1YTQyNGVhNmRjMGJjODU5NzgxNjAwMTkiLCJ1c2VybmFtZSI6ImNocmlzd2lsZGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiY2hyaXN3aWxkaW5nLmNvLnVrIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNiJ9LCJjdGltZSI6MTQ3MDUxNzkyMSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDcwNTE3ODQ4LCJoYXNoIjoiOTllZjc4Y2NmOThjNTc0M2E1YTVkMjAwNTBjYjEwN2RhYmRmNTVkM2RkNmJjYzM2MGZmN2I3MzM0MmNhMjRjY2M1ZjhmYjk0OTUyMDcyYTMyYWU1YjE1OTMyNmE3ZWU2MTE3MzRiYjcxMjBmNjg1YjZkMDU0NzkxMWFmOTQ5YWYiLCJzZXFubyI6NTYzMDQ2fSwicHJldiI6IjU4MWRkMDg1YWRhZmQ0NWY5YTkzMGYyMDFjYzgxYjA2MjU1YzI1OGJiMjI3ZWQ5MWNlN2Y0ZDBkZmUzYzVlMDEiLCJzZXFubyI6OSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEB2UX4VZ0faLJk6K1q5IBvY8+hIJ4ikD8nMWsSSwKa6D9yjlsTB4dAIayrsu5exW+Y55/tASza0+yAn9j68GLYPqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgIpAhAJ/BsJlJI2nln2MXlmJXkeM9WTz8n5yjjhhRDzejdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/chriswilding
+
+==================================================================
