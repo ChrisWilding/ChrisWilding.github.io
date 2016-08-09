@@ -1,15 +1,11 @@
-# Site settings
-title: Chris Wilding - Software Developer
-email: hello@chriswilding.co.uk
-description: >
-  This is the personal website of Chris Wilding
 baseurl: ''
+email: hello@chriswilding.co.uk
+markdown: kramdown
+sass:
+  style: compressed
+title: Chris Wilding
 url: 'http://chriswilding.co.uk'
-
 usernames:
   github:  ChrisWilding
   linkedin: ChrisWildingUK
   twitter: ChrisWildingUK
-
-# Build settings
-markdown: kramdown

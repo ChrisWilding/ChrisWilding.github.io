@@ -3,7 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-
 Hi, I'm Chris Wilding. I'm a music loving, tea obsessed software developer
 living and working in Leeds, UK.
 
