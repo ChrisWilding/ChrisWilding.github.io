@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 Hi, I'm Chris Wilding. I'm a music loving, tea obsessed software developer
-living and working in Leeds, UK.
+living and working in Manchester, UK.
 
 Some of the languages, software and tools I work with regularly are: CSS/SCSS,
 Express, Git, GitHub, GraphQL, JavaScript, Mac OS X, Node.js, React, Redux,
