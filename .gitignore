@@ -2,5 +2,6 @@
 .sass-cache
 .terraform
 _site
+lambda.zip
 terraform.tfstate
 terraform.tfstate.backup

@@ -1,5 +1,12 @@
 baseurl: ''
 email: hello@chriswilding.co.uk
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - lambda.js
+  - lambda.zip
+  - terraform.tf
 markdown: kramdown
 sass:
   style: compressed
