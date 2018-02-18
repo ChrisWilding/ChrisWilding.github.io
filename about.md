@@ -14,6 +14,6 @@ In the past I've also worked with: Capybara, Cucumber, Elixir, GraphQL, MySQL,
 RSpec, Rails, Ruby, SQL, Sinatra, Ubuntu, and Vagrant
 
 In my spare time I love trying out new languages and tools. I'd love to work
-commercially with a functional programming language like Erlang or Elixir. I
-really enjoying working with Go on personal projects. I'm also enjoying working
-with DevOps tools like Docker and Terraform.
+commercially with a functional programming language like Erlang or Elixir. I've
+really enjoyed trying Go on personal projects. Experimenting with DevOps tools
+like Docker and Terraform has been great too.
