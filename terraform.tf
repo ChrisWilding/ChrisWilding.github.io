@@ -10,6 +10,11 @@ provider "aws" {
   region = "${var.region}"
 }
 
+provider "aws" {
+  alias  = "us_east_1"
+  region = "us-east-1"
+}
+
 data "aws_iam_policy_document" "website_s3_bucket_iam_policy_document" {
   statement {
     actions   = ["s3:GetObject"]
@@ -42,8 +47,45 @@ resource "aws_s3_bucket" "website_s3_bucket" {
   }
 }
 
+resource "aws_iam_role" "iam_role_lambda" {
+  provider           = "aws.us_east_1"
+
+  name               = "iam_role_lambda"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "lambda.amazonaws.com",
+          "edgelambda.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_lambda_function" "website_lambda" {
+  provider         = "aws.us_east_1"
+
+  filename         = "lambda.zip"
+  function_name    = "lambda"
+  handler          = "lambda.handler"
+  publish          = "true"
+  role             = "${aws_iam_role.iam_role_lambda.arn}"
+  runtime          = "nodejs6.10"
+  source_code_hash = "${base64sha256(file("lambda.zip"))}"
+}
+
 resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
-  depends_on          = ["aws_s3_bucket.website_s3_bucket"]
+  depends_on          = ["aws_s3_bucket.website_s3_bucket", "aws_lambda_function.website_lambda"]
 
   aliases             = ["www.${var.domain}"]
   default_root_object = "index.html"
@@ -67,6 +109,11 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
       cookies {
         forward = "none"
       }
+    }
+
+    lambda_function_association {
+      event_type = "viewer-response"
+      lambda_arn = "${aws_lambda_function.website_lambda.arn}:${aws_lambda_function.website_lambda.version}"
     }
   }
 
