@@ -7,7 +7,7 @@ Hi, I'm Chris Wilding. I'm a music loving, tea obsessed software developer
 living and working in Manchester, UK.
 
 Some of the languages, software and tools I work with regularly are: AWS,
-CSS/SCSS, CentOS, Express, Git, GitHub, JavaScript, Jira, Linux, Mac OS X,
+CSS/SCSS, CentOS, Express, Git, GitHub, JavaScript, Jira, Linux, macOS,
 Node.js, Python, React, Redux, Troposphere, and Vim
 
 In the past I've also worked with: Capybara, Cucumber, Elixir, GraphQL, MySQL,
