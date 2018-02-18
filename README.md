@@ -1,5 +1,5 @@
-# ChrisWilding.github.io
+# My Personal Website - https://www.chriswilding.co.uk
 
 This is the repository for my personal website built using Jeykll and hosted on
-GitHub Pages. Check it out at
-[http://www.chriswilding.co.uk/](http://www.chriswilding.co.uk/)
+AWS. Check it out at
+[https://www.chriswilding.co.uk/](https://www.chriswilding.co.uk/)
