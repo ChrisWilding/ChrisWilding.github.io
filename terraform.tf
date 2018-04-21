@@ -247,3 +247,13 @@ resource "aws_route53_record" "website_route53_www" {
   type    = "CNAME"
   zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
 }
+resource "aws_route53_record" "website_route53_letsencrypt" {
+  name    = "_acme-challenge"
+  records = [
+    "xWz6bWsL0WPQTManU1yuivos_-iMccoZcE6nW71YgyI",
+    "CbP-_Fe2a-4_yxYfAOyC82xkywrE0azkpE83qf_H0X0"
+  ]
+  ttl     = "300"
+  type    = "TXT"
+  zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
+}
