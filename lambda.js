@@ -11,7 +11,7 @@ function handler(event, context, callback) {
 
     headers['content-security-policy'] = [{
         key:   'Content-Security-Policy',
-        value: "default-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self'; object-src 'none'"
+        value: "default-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'"
     }];
 
     headers['x-content-type-options'] = [{
