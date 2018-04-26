@@ -9,6 +9,8 @@ exclude:
   - terraform.tf
   - vendor
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
 sass:
   style: compressed
 title: Chris Wilding
