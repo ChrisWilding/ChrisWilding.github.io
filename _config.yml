@@ -1,4 +1,4 @@
-baseurl: ''
+description: 'Chris Wilding is a software developer living and working in Manchester, UK'
 email: hello@chriswilding.co.uk
 exclude:
   - Gemfile
@@ -14,7 +14,7 @@ plugins:
 sass:
   style: compressed
 title: Chris Wilding
-url: 'http://www.chriswilding.co.uk'
+url: 'https://www.chriswilding.co.uk'
 usernames:
   github:  ChrisWilding
   linkedin: ChrisWildingUK
