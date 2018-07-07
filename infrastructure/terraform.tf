@@ -93,7 +93,7 @@ resource "aws_lambda_function" "website_lambda" {
   handler          = "lambda.handler"
   publish          = "true"
   role             = "${aws_iam_role.iam_role_lambda.arn}"
-  runtime          = "nodejs6.10"
+  runtime          = "nodejs8.10"
   source_code_hash = "${base64sha256(file("${data.archive_file.website_lambda_zip.output_path}"))}"
 }
 
