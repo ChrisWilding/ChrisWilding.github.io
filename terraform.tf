@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "terraform.chriswilding.co.uk"
+    key    = "www.chriswilding.co.uk"
+    region = "eu-west-1"
+  }
+}
+
 variable "domain" {
   default = "chriswilding.co.uk"
 }
@@ -48,9 +56,9 @@ resource "aws_s3_bucket" "website_s3_bucket" {
 }
 
 resource "aws_iam_role" "iam_role_lambda" {
-  provider           = "aws.us_east_1"
+  provider = "aws.us_east_1"
 
-  name               = "iam_role_lambda"
+  name = "iam_role_lambda"
 
   assume_role_policy = <<EOF
 {
@@ -73,10 +81,10 @@ EOF
 }
 
 resource "aws_lambda_function" "website_lambda" {
-  provider         = "aws.us_east_1"
+  provider = "aws.us_east_1"
 
   filename         = "lambda.zip"
-  function_name    = "lambda"
+  function_name    = "website_lambda"
   handler          = "lambda.handler"
   publish          = "true"
   role             = "${aws_iam_role.iam_role_lambda.arn}"
@@ -85,7 +93,7 @@ resource "aws_lambda_function" "website_lambda" {
 }
 
 resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
-  depends_on          = ["aws_s3_bucket.website_s3_bucket", "aws_lambda_function.website_lambda"]
+  depends_on = ["aws_s3_bucket.website_s3_bucket", "aws_lambda_function.website_lambda"]
 
   aliases             = ["www.${var.domain}"]
   default_root_object = "index.html"
@@ -157,6 +165,21 @@ resource "aws_route53_record" "website_route53_a" {
   }
 }
 
+resource "aws_route53_record" "website_route53_ns" {
+  name = ""
+
+  records = [
+    "ns-1084.awsdns-07.org",
+    "ns-962.awsdns-56.net",
+    "ns-1683.awsdns-18.co.uk",
+    "ns-192.awsdns-24.com",
+  ]
+
+  ttl     = "300"
+  type    = "NS"
+  zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
+}
+
 resource "aws_route53_record" "website_route53_mx" {
   name    = ""
   records = ["0 chriswilding-co-uk.mail.protection.outlook.com"]
@@ -182,11 +205,13 @@ resource "aws_route53_record" "website_route53_srv_2" {
 }
 
 resource "aws_route53_record" "website_route53_txt" {
-  name    = ""
+  name = ""
+
   records = [
     "MS=ms75363924",
-    "v=spf1 include:spf.protection.outlook.com -all"
+    "v=spf1 include:spf.protection.outlook.com -all",
   ]
+
   ttl     = "300"
   type    = "TXT"
   zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
@@ -247,12 +272,15 @@ resource "aws_route53_record" "website_route53_www" {
   type    = "CNAME"
   zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
 }
+
 resource "aws_route53_record" "website_route53_letsencrypt" {
-  name    = "_acme-challenge"
+  name = "_acme-challenge"
+
   records = [
     "xWz6bWsL0WPQTManU1yuivos_-iMccoZcE6nW71YgyI",
-    "CbP-_Fe2a-4_yxYfAOyC82xkywrE0azkpE83qf_H0X0"
+    "CbP-_Fe2a-4_yxYfAOyC82xkywrE0azkpE83qf_H0X0",
   ]
+
   ttl     = "300"
   type    = "TXT"
   zone_id = "${aws_route53_zone.website_route53_zone.zone_id}"
