@@ -61,29 +61,28 @@ data "archive_file" "website_lambda_zip" {
   output_path = "${path.module}/.terraform/lambda.zip"
 }
 
+data "aws_iam_policy_document" "website_lambda_iam_policy_document" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    effect  = "Allow"
+
+    principals {
+      type = "Service"
+
+      identifiers = [
+        "edgelambda.amazonaws.com",
+        "lambda.amazonaws.com",
+      ]
+    }
+  }
+}
+
 resource "aws_iam_role" "iam_role_lambda" {
   provider = "aws.us_east_1"
 
   name = "iam_role_lambda"
 
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "",
-      "Effect": "Allow",
-      "Principal": {
-        "Service": [
-          "lambda.amazonaws.com",
-          "edgelambda.amazonaws.com"
-        ]
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-EOF
+  assume_role_policy = "${data.aws_iam_policy_document.website_lambda_iam_policy_document.json}"
 }
 
 resource "aws_lambda_function" "website_lambda" {
