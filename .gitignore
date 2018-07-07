@@ -1,7 +1,6 @@
 .jekyll-metadata
 .sass-cache
-.terraform
+/infrastructure/.terraform
+/infrastructure/terraform.tfstate
+/infrastructure/terraform.tfstate.backup
 _site
-lambda.zip
-terraform.tfstate
-terraform.tfstate.backup

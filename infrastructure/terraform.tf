@@ -55,6 +55,12 @@ resource "aws_s3_bucket" "website_s3_bucket" {
   }
 }
 
+data "archive_file" "website_lambda_zip" {
+  type        = "zip"
+  source_dir  = "${path.module}/lambda/"
+  output_path = "${path.module}/.terraform/lambda.zip"
+}
+
 resource "aws_iam_role" "iam_role_lambda" {
   provider = "aws.us_east_1"
 
@@ -83,13 +89,13 @@ EOF
 resource "aws_lambda_function" "website_lambda" {
   provider = "aws.us_east_1"
 
-  filename         = "lambda.zip"
+  filename         = "${data.archive_file.website_lambda_zip.output_path}"
   function_name    = "website_lambda"
   handler          = "lambda.handler"
   publish          = "true"
   role             = "${aws_iam_role.iam_role_lambda.arn}"
   runtime          = "nodejs6.10"
-  source_code_hash = "${base64sha256(file("lambda.zip"))}"
+  source_code_hash = "${base64sha256(file("${data.archive_file.website_lambda_zip.output_path}"))}"
 }
 
 resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
