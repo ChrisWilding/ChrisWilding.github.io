@@ -282,10 +282,7 @@ resource "aws_route53_record" "website_route53_letsencrypt" {
   name = "_acme-challenge"
 
   records = [
-    "xWz6bWsL0WPQTManU1yuivos_-iMccoZcE6nW71YgyI",
-    "CbP-_Fe2a-4_yxYfAOyC82xkywrE0azkpE83qf_H0X0",
-    "zyTPstw12S17JnD-Ycy4dWO-42FQ2oRSf_unClu7SGw",
-    "Cm2gmSUg_xGuTcs4pOrXE8GMBtmvo2TnhbhKqArBemQ"
+    "ceJ5ytxw2sGjZK0DQRroZ461EIorbTw0XlsgcOly0rE",
   ]
 
   ttl     = "300"
