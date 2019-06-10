@@ -14,13 +14,19 @@ variable "region" {
   default = "eu-west-1"
 }
 
-provider "aws" {
-  region = "${var.region}"
+provider "archive" {
+  version = "~> 1.2.2"
 }
 
 provider "aws" {
-  alias  = "us_east_1"
-  region = "us-east-1"
+  region  = "${var.region}"
+  version = "~> 2.14.0"
+}
+
+provider "aws" {
+  alias   = "us_east_1"
+  region  = "us-east-1"
+  version = "~> 2.14.0"
 }
 
 data "aws_iam_policy_document" "website_s3_bucket_iam_policy_document" {
