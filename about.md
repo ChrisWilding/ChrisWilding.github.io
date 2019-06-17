@@ -7,13 +7,11 @@ Hi, I'm Chris Wilding. I'm a music loving, tea obsessed software developer
 living and working in Manchester, UK.
 
 Some of the languages, software and tools I work with regularly are: AWS,
-CSS/SCSS, CentOS, Express, Git, GitHub, JavaScript, Jira, Linux, macOS,
-Node.js, Python, React, Redux, Troposphere, and Vim
+CSS/SCSS, Docker, Git, GitHub, JavaScript, Jira, IntelliJ, Linux, macOS,
+Node.js, Python, React, Redux, Scala, Terraform, and Visual Studio Code.
 
-In the past I've also worked with: Capybara, Cucumber, Elixir, GraphQL, MySQL,
-RSpec, Rails, Ruby, SQL, Sinatra, Ubuntu, and Vagrant
+In the past I've also worked with: Capybara, CentOS, Cucumber, Elixir, Express,
+GraphQL, MySQL, RSpec, Rails, Ruby, SQL, Sinatra, Troposphere, Ubuntu, Vagrant
+and Vim.
 
-In my spare time I love trying out new languages and tools. I'd love to work
-commercially with a functional programming language like Erlang or Elixir. I've
-really enjoyed trying Go on personal projects. Experimenting with DevOps tools
-like Docker and Terraform has been great too.
+In my spare time I love trying out new languages and tools.

@@ -106,6 +106,12 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
   http_version        = "http2"
   price_class         = "PriceClass_100"
 
+  custom_error_response {
+    error_code         = 404
+    response_page_path = "/error.html"
+    response_code      = 404
+  }
+
   default_cache_behavior {
     allowed_methods        = ["HEAD", "GET", "OPTIONS"]
     cached_methods         = ["HEAD", "GET", "OPTIONS"]
@@ -146,8 +152,8 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = "arn:aws:acm:us-east-1:385160457355:certificate/d7979c2e-844d-4888-90ca-c913b29f87b5"
-    ssl_support_method  = "sni-only"
+    acm_certificate_arn      = "arn:aws:acm:us-east-1:385160457355:certificate/d7979c2e-844d-4888-90ca-c913b29f87b5"
+    ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.1_2016"
   }
 }
