@@ -29,18 +29,6 @@ provider "aws" {
   version = "~> 2.14.0"
 }
 
-data "aws_iam_policy_document" "website_s3_bucket_iam_policy_document" {
-  statement {
-    actions   = ["s3:GetObject"]
-    resources = ["arn:aws:s3:::www.${var.domain}/*"]
-
-    principals {
-      type        = "AWS"
-      identifiers = ["*"]
-    }
-  }
-}
-
 resource "aws_s3_bucket" "redirect_s3_bucket" {
   acl    = "public-read"
   bucket = "${var.domain}"
@@ -51,9 +39,12 @@ resource "aws_s3_bucket" "redirect_s3_bucket" {
 }
 
 resource "aws_s3_bucket" "website_s3_bucket" {
-  acl    = "public-read"
+  acl    = "private"
   bucket = "www.${var.domain}"
-  policy = "${data.aws_iam_policy_document.website_s3_bucket_iam_policy_document.json}"
+  policy = templatefile("${path.module}/aws-s3-bucket-policy.json", {
+    principal = "${aws_cloudfront_origin_access_identity.origin_access_identity.iam_arn}",
+    resource  = "arn:aws:s3:::www.${var.domain}",
+  })
 
   website {
     error_document = "error.html"
@@ -89,6 +80,9 @@ resource "aws_iam_role" "iam_role_lambda" {
   name = "iam_role_lambda"
 
   assume_role_policy = "${data.aws_iam_policy_document.website_lambda_iam_policy_document.json}"
+}
+
+resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 }
 
 resource "aws_lambda_function" "website_lambda" {
@@ -137,14 +131,11 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
   }
 
   origin {
-    domain_name = "${aws_s3_bucket.website_s3_bucket.website_endpoint}"
+    domain_name = "${aws_s3_bucket.website_s3_bucket.bucket_regional_domain_name}"
     origin_id   = "${aws_s3_bucket.website_s3_bucket.id}"
 
-    custom_origin_config {
-      origin_protocol_policy = "http-only"
-      http_port              = "80"
-      https_port             = "443"
-      origin_ssl_protocols   = ["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
+    s3_origin_config {
+      origin_access_identity = "${aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path}"
     }
   }
 
@@ -157,6 +148,7 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
   viewer_certificate {
     acm_certificate_arn = "arn:aws:acm:us-east-1:385160457355:certificate/d7979c2e-844d-4888-90ca-c913b29f87b5"
     ssl_support_method  = "sni-only"
+    minimum_protocol_version = "TLSv1.1_2016"
   }
 }
 

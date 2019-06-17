@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${principal}"
+      },
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "${resource}/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${principal}"
+      },
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "${resource}"
+    }
+  ]
+}
