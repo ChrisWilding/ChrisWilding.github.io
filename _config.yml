@@ -4,10 +4,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - lambda.js
-  - lambda.zip
-  - terraform.tf
-  - vendor
+  - infrastructure
 markdown: kramdown
 plugins:
   - jekyll-sitemap
