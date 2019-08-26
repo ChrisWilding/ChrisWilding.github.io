@@ -286,7 +286,7 @@ resource "aws_route53_record" "website_route53_letsencrypt" {
   name = "_acme-challenge"
 
   records = [
-    "XqzybPOr4Qf12xiaNGL9StjGdJM7Dzh0wqSsAt0kj98",
+    "9KRls7T0icF1UvgxYj3ha0sTugFvXi7E0s3672TepNU"
   ]
 
   ttl     = "300"
