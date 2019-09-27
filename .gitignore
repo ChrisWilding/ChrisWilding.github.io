@@ -1,6 +1,4 @@
-.jekyll-metadata
-.sass-cache
+/.cache
 /infrastructure/.terraform
-/infrastructure/terraform.tfstate
-/infrastructure/terraform.tfstate.backup
-_site
+/node_modules
+/public
