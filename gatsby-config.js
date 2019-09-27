@@ -30,5 +30,20 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: ` gatsby-plugin-netlify-headers`,
+      options: {
+        headers: {
+          "/*": [
+            "Content-Security-Policy: default-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'",
+            "Referrer-Policy: same-origin",
+            "Strict-Transport-Security: max-age=31536000; includeSubdomains; preload",
+            "X-Content-Type-Options: nosniff",
+            "X-Frame-Options: DENY",
+            "X-XSS-Protection: 1; mode=block",
+          ],
+        },
+      },
+    },
   ],
 }
