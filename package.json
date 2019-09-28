@@ -1,7 +1,7 @@
 {
   "name": "www.chriswilding.co.uk",
   "private": true,
-  "description": "My personal website",
+  "description": "Chris Wilding is a software engineer living and working in Manchester, UK",
   "version": "0.1.0",
   "author": "Chris Wilding <hello@chriswilding.co.uk>",
   "dependencies": {
