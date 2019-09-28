@@ -35,7 +35,7 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "Content-Security-Policy: default-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self'",
+            "Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self'",
             "Referrer-Policy: same-origin",
             "Strict-Transport-Security: max-age=31536000; includeSubdomains; preload",
             "X-Content-Type-Options: nosniff",
