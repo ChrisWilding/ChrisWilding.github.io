@@ -1,10 +1,14 @@
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponentElement } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout: FunctionComponent = ({ children }) => {
+interface Props {
+  children: JSX.Element[]
+}
+
+const Layout = ({ children }: Props): FunctionComponentElement<{}> => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,7 +21,7 @@ const Layout: FunctionComponent = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title || ""} />
       <div
         style={{
           margin: `0 auto`,
