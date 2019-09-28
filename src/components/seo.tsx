@@ -9,7 +9,12 @@ interface Props {
   title: string
 }
 
-function SEO({ description, lang, meta, title }: Props): FunctionComponentElement<Props> {
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+}: Props): FunctionComponentElement<Props> {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -29,7 +34,7 @@ function SEO({ description, lang, meta, title }: Props): FunctionComponentElemen
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
