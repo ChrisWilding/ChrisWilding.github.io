@@ -3,6 +3,9 @@ module.exports = {
     title: `Chris Wilding`,
     description: `Chris Wilding is a software engineer living and working in Manchester, UK`,
     author: `@ChrisWildingUK`,
+    email: `hello@chriswilding.co.uk`,
+    github: `ChrisWilding`,
+    linkedin: `ChrisWildingUK`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
