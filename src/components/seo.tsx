@@ -3,9 +3,9 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface Props {
-  description?: string
-  lang?: string
-  meta?: []
+  description: string
+  lang: string
+  meta: []
   title: string
 }
 
@@ -34,7 +34,7 @@ function SEO({
   return (
     <Helmet
       htmlAttributes={{
-        lang: lang || "en",
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -71,9 +71,15 @@ function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta || [])}
+      ].concat(meta)}
     />
   )
 }
+
+SEO.defaultProps = {
+  lang: "en",
+  meta: [],
+  description: "",
+} as Partial<Props>
 
 export default SEO
