@@ -1,7 +1,13 @@
 import { Link } from "gatsby"
-import React, { FunctionComponentElement } from "react"
+import React, { FunctionComponent, FunctionComponentElement } from "react"
 
-const Header = ({ siteTitle }: Props): FunctionComponentElement<Props> => (
+interface Props {
+  siteTitle: string
+}
+
+const Header: FunctionComponent<Props> = ({
+  siteTitle,
+}: Props): FunctionComponentElement<Props> => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -30,8 +36,8 @@ const Header = ({ siteTitle }: Props): FunctionComponentElement<Props> => (
   </header>
 )
 
-interface Props {
-  siteTitle: string
-}
+Header.defaultProps = {
+  siteTitle: "",
+} as Props
 
 export default Header
