@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import Heading from "../components/Heading"
+import SEO from "../components/SEO"
 
 const AboutPage: FunctionComponent = () => (
   <Layout>
     <SEO title="About" />
-    <h1>Hi, I&#39;m Chris Wilding.</h1>
+    <Heading>Hi, I&#39;m Chris Wilding</Heading>
     <p>
       I&#39;m a music loving, tea obsessed software engineer living and working
       in Manchester, UK.

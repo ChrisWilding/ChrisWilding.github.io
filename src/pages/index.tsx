@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Heading from "../components/Heading"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { ExternalLink, InternalLink } from "../components/Link"
 
 const IndexPage: FunctionComponent = () => {
   const {
@@ -27,37 +29,37 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi, I&#39;m Chris Wilding</h1>
+      <Heading>Hi, I&#39;m Chris Wilding</Heading>
       <p>I&#39;m a software engineer living and working in Manchester, UK</p>
       <p>
         If you want to find our more about me take a look at my{" "}
-        <Link to="/about/">about</Link> page or{" "}
-        <a
+        <InternalLink to="/about/">about</InternalLink> page or{" "}
+        <ExternalLink
           href={`https://github.com/${github}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           GitHub
-        </a>{" "}
+        </ExternalLink>{" "}
         profile. If you want to get in touch contact me through{" "}
-        <a
+        <ExternalLink
           href={`https://uk.linkedin.com/in/${linkedin}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           LinkedIn
-        </a>{" "}
-        or by <a href={`mailto:${email}`}>email</a>.
+        </ExternalLink>{" "}
+        or by <ExternalLink href={`mailto:${email}`}>email</ExternalLink>.
       </p>
       <p>
         I occasionally tweet as{" "}
-        <a
+        <ExternalLink
           href={`https://twitter.com/${author}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           {author}
-        </a>
+        </ExternalLink>
         .
       </p>
     </Layout>
