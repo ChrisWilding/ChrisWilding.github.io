@@ -6,7 +6,6 @@ import React, {
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout: FunctionComponent<PropsWithChildren<{}>> = ({
   children,
