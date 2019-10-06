@@ -1,15 +1,16 @@
 import React, { FunctionComponent } from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { InternalLink } from "../components/Link"
 
 const NotFoundPage: FunctionComponent = () => (
   <Layout>
     <SEO title="Not found" />
-    <h1>Not Found</h1>
+    <h2>Not Found</h2>
     <p>
-      Something went wrong. Try going back to the <Link to="/">home</Link> page.
+      Something went wrong. Try going back to the{" "}
+      <InternalLink to="/">home</InternalLink> page.
     </p>
   </Layout>
 )

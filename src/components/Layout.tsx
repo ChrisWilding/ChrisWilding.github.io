@@ -3,9 +3,18 @@ import React, {
   FunctionComponentElement,
   PropsWithChildren,
 } from "react"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import GlobalStyle from "../styles/GlobalStyle"
+import Header from "./Header"
+
+const Main = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+`
 
 const Layout: FunctionComponent<PropsWithChildren<{}>> = ({
   children,
@@ -22,17 +31,11 @@ const Layout: FunctionComponent<PropsWithChildren<{}>> = ({
 
   return (
     <>
+      <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title || ""} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+      <Main>
         <main>{children}</main>
-      </div>
+      </Main>
     </>
   )
 }
