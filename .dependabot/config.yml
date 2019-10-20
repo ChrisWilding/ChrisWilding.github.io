@@ -1,0 +1,11 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: "all"
+    default_reviewers:
+      - "ChrisWilding"
+    directory: "/"
+    update_schedule: "live"
