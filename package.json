@@ -38,16 +38,16 @@
     "typescript": "^3.6.4"
   },
   "scripts": {
-    "lint": "npm run lint:ci && npm run lint:prettier && npm run lint:types",
+    "lint": "yarn run lint:ci && yarn run lint:prettier && yarn run lint:types",
     "lint:ci": "eslint src --ext .tsx,.ts",
     "lint:prettier": "prettier --list-different \"**/*.{js,json,md,ts,tsx}\"",
     "lint:types": "tsc --noEmit",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,json,md,ts,tsx}\"",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "npm run lint"
+    "test": "yarn run lint"
   },
   "repository": {
     "type": "git",
