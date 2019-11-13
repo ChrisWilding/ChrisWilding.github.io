@@ -8,7 +8,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.17.11",
     "gatsby-cli": "^2.8.8",
-    "gatsby-image": "^2.2.31",
+    "gatsby-image": "^2.2.32",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-netlify": "^2.1.24",
     "gatsby-plugin-offline": "^3.0.19",
